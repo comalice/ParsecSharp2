@@ -1,93 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{832ED56A-E9C3-462C-AE3A-8E8C3B6B3FCD}</ProjectGuid>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PJanssen.ParsecSharp</RootNamespace>
     <AssemblyName>PJanssen.ParsecSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\CARules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.336902">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Chars.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Combine.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Either\IEither.cs" />
-    <Compile Include="IParser.cs" />
-    <Compile Include="IO\AbstractInputReader.cs" />
-    <Compile Include="IO\IInputReader.cs" />
-    <Compile Include="IO\InputReader.cs" />
-    <Compile Include="IO\StreamInputReader.cs" />
-    <Compile Include="IO\Position.cs" />
-    <Compile Include="Either\Either.cs" />
-    <Compile Include="Either\Error.cs" />
-    <Compile Include="Either\Success.cs" />
-    <Compile Include="Helpers\Throw.cs" />
-    <Compile Include="Helpers\Unit.cs" />
-    <Compile Include="IO\StringInputReader.cs" />
-    <Compile Include="Numeric.cs" />
-    <Compile Include="Parse.cs" />
-    <Compile Include="ParseError.cs" />
-    <Compile Include="Parser.cs" />
-    <Compile Include="ParseResult.cs" />
-    <Compile Include="Parsers\AggregateParser.cs" />
-    <Compile Include="Parsers\AnyCharParser.cs" />
-    <Compile Include="Parsers\ChainParser.cs" />
-    <Compile Include="Parsers\EofParser.cs" />
-    <Compile Include="Parsers\ErrorParser.cs" />
-    <Compile Include="Parsers\LabeledParser.cs" />
-    <Compile Include="Parsers\NegatedParser.cs" />
-    <Compile Include="Parsers\OrParser.cs" />
-    <Compile Include="Parsers\SelectManyParser.cs" />
-    <Compile Include="Parsers\SelectParser.cs" />
-    <Compile Include="Parsers\SequenceParser.cs" />
-    <Compile Include="Parsers\StringParser.cs" />
-    <Compile Include="Parsers\SuccessParser.cs" />
-    <Compile Include="Parsers\TryParser.cs" />
-    <Compile Include="Parsers\PredicateParser.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tokens.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
